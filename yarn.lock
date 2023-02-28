@@ -25,6 +25,18 @@
   resolved "https://registry.yarnpkg.com/@aws-cdk/asset-node-proxy-agent-v5/-/asset-node-proxy-agent-v5-2.0.70.tgz#be87a8262e04e8ff22a2a0881d8fcea6a2e1202b"
   integrity sha512-MRiW3unEC4Mnip5vgPPwUqUccphBj68aif/tI0wGjS4yKXo+uJtat9WMAWxGIsaLi+EdGTD2t1YPdTkUmPnBTw==
 
+"@aws-cdk/integ-runner@^2.66.1":
+  version "2.66.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.66.1.tgz#eacde47b88db01461dba807953b7ba91fc9d28d7"
+  integrity sha512-1y5wyn10azf8HHyOx724JrBVHT7+I345VZjcWBL9XpxPEPFvoGIzSGXxQcXlR4aJKw4ElEPcHfQmehEpTWJFsg==
+  dependencies:
+    aws-cdk "2.66.1"
+
+"@aws-cdk/integ-tests-alpha@^2.66.1-alpha.0":
+  version "2.66.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.66.1-alpha.0.tgz#b4d21f9a821859b44134c6d145cb6f33cae6b6ce"
+  integrity sha512-OWZZ6trcXV5vw27fqoxu/VxzQ9xormjWs6trwNWMELzR9n/2lrJQ5dXNkNqSqdB2+OGEPdReI33+Ko7c7Wznug==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.18.6":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.18.6.tgz#3b25d38c89600baa2dcc219edfa88a74eb2c427a"
@@ -1350,7 +1362,7 @@ aws-cdk-lib@^2.66.1:
     semver "^7.3.8"
     yaml "1.10.2"
 
-aws-cdk@^2.66.1:
+aws-cdk@2.66.1, aws-cdk@^2.66.1:
   version "2.66.1"
   resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.66.1.tgz#1b70a28e1e50362d53b32ff7bb4f1ff7f49a41c1"
   integrity sha512-exm97/VOH6yZPN2is3UC0acc6KF56AANvCg2gAEhyu6dPBueKxNCzrvsjNg/vmXrA8HqJ2jYJMg88YRNaUfylA==
