@@ -13,6 +13,14 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   name: "integ-runner-proto",
   prettier: true,
   projenrcTs: true,
+  deps: [
+    "@aws-sdk/client-dynamodb",
+    "@aws-sdk/lib-dynamodb",
+    "@middy/core",
+    "@middy/event-normalizer",
+    "@types/aws-lambda",
+    "source-map-support",
+  ],
 });
 
 // integration test with `integ-runner` and `integ-tests`

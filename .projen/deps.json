@@ -98,6 +98,34 @@
       "type": "devenv"
     },
     {
+      "name": "@aws-sdk/client-dynamodb",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-sdk/lib-dynamodb",
+      "type": "runtime"
+    },
+    {
+      "name": "@middy/core",
+      "type": "runtime"
+    },
+    {
+      "name": "@middy/error-logger",
+      "type": "runtime"
+    },
+    {
+      "name": "@middy/event-normalizer",
+      "type": "runtime"
+    },
+    {
+      "name": "@middy/input-output-logger",
+      "type": "runtime"
+    },
+    {
+      "name": "@types/aws-lambda",
+      "type": "runtime"
+    },
+    {
       "name": "aws-cdk-lib",
       "version": "^2.66.1",
       "type": "runtime"
@@ -105,6 +133,10 @@
     {
       "name": "constructs",
       "version": "^10.0.5",
+      "type": "runtime"
+    },
+    {
+      "name": "source-map-support",
       "type": "runtime"
     }
   ],
