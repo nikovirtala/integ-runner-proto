@@ -31,47 +31,19 @@ const write = async (input: TransactWriteCommandInput) => {
   );
 };
 
+/* A dataset with all kind of characters.
+ This will cause the assertion to fail.
+ Results an error: "Response is not valid JSON"
+
+ Q: Is it so that CloudFormation does not support UTF-8 characters?
+
+ Q: Is it really necessary to send the entire response object back to CloudFormation?
+ */
 const data = {
-  stringProperty1: "1234567890",
-  stringProperty2: "qwertyuiopå",
-  stringProperty3: "ASDFGHJKLÖÄ",
-  stringProperty4: "!#€%&/()=?",
-  stringProperty5: "value5",
-  stringProperty6: "value6",
-  stringProperty7: "value7",
-  stringProperty8: "value8",
-  stringProperty9: "value9",
-  numberProperty10: 10,
-  numberProperty11: 11,
-  numberProperty12: 12,
-  numberProperty13: 13,
-  numberProperty14: 14,
-  numberProperty15: 15,
-  numberProperty16: 16,
-  numberProperty17: 17,
-  numberProperty18: 18,
-  numberProperty19: 19,
-  nullProperty20: null,
-  nullProperty21: null,
-  nullProperty22: null,
-  nullProperty23: null,
-  nullProperty24: null,
-  nullProperty25: null,
-  nullProperty26: null,
-  nullProperty27: null,
-  nullProperty28: null,
-  nullProperty29: null,
-  mapProperty30: { sub30: "value30" },
-  mapProperty31: { sub31: "value31" },
-  mapProperty32: { sub32: "value32" },
-  mapProperty33: { sub33: "value33" },
-  mapProperty34: { sub34: "value34" },
-  mapProperty35: { sub35: "value35" },
-  mapProperty36: { sub36: "value36" },
-  mapProperty37: { sub37: "value37" },
-  mapProperty38: { sub38: "value38" },
-  mapProperty39: { sub39: "value39" },
-  mapProperty40: { sub40: "value40" },
+  numbers: "1234567890",
+  smallLetters: "abcdefghijklmnopqrstuvwxyzåäö",
+  capitalLetters: "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ",
+  specialCharcters: '!"#¤%&/()=?`´^*+~_-.,:;<>|',
 };
 
 const generateUpdateQuery = (obj: Record<string, unknown>) => {

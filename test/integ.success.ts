@@ -64,8 +64,8 @@ class StackUnderTest extends Stack {
 
     table.grantReadWriteData(trigger);
 
-    const failure = new aws_lambda_nodejs.NodejsFunction(this, "failure", {
-      entry: path.join(__dirname, "../src/functions/failure/index.ts"),
+    const success = new aws_lambda_nodejs.NodejsFunction(this, "success", {
+      entry: path.join(__dirname, "../src/functions/success/index.ts"),
       architecture: aws_lambda.Architecture.ARM_64,
       runtime: aws_lambda.Runtime.NODEJS_18_X,
       environment: {
@@ -87,7 +87,7 @@ class StackUnderTest extends Stack {
     });
 
     // trigger from items created by the function *trigger*
-    failure.addEventSource(
+    success.addEventSource(
       new aws_lambda_event_sources.DynamoEventSource(table, {
         enabled: true,
         filters: [
@@ -104,7 +104,7 @@ class StackUnderTest extends Stack {
       })
     );
 
-    table.grantReadWriteData(failure);
+    table.grantReadWriteData(success);
 
     this.triggerFunctionName = trigger.functionName;
     this.tableName = table.tableName;
@@ -167,7 +167,7 @@ integ.assertions.invokeFunction({
 });
 
 /* Assert the result from the dynamodb table
-  the item in question is created by the Lambda Function *failure*
+  the item in question is created by the Lambda Function *success*
   that is triggered by the DynamoDB stream
  */
 const items = integ.assertions.awsApiCall("DynamoDB", "query", {
@@ -264,13 +264,6 @@ items
               },
             },
           },
-          mapProperty40: {
-            M: {
-              sub40: {
-                S: "value40",
-              },
-            },
-          },
           nullProperty20: {
             NULL: true,
           },
@@ -332,16 +325,16 @@ items
             N: "19",
           },
           stringProperty1: {
-            S: "1234567890",
+            S: "value1",
           },
           stringProperty2: {
-            S: "qwertyuiopå",
+            S: "value2",
           },
           stringProperty3: {
-            S: "ASDFGHJKLÖÄ",
+            S: "value3",
           },
           stringProperty4: {
-            S: "!#€%&/()=?",
+            S: "value4",
           },
           stringProperty5: {
             S: "value5",
@@ -357,6 +350,9 @@ items
           },
           stringProperty9: {
             S: "value9",
+          },
+          stringProperty10: {
+            S: "value10",
           },
         },
       ],

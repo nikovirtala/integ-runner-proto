@@ -1508,22 +1508,10 @@
   resolved "https://registry.yarnpkg.com/@middy/core/-/core-4.2.6.tgz#38c8b5dec6df7f03a0b1826bbd6205d8c833aeb0"
   integrity sha512-F2jMyB1+KB2trbfukcJB5qbAW4eyj5jNW+oJrLmh2DOhNI0XnDIQwrn8pWueiCWU5xEvkMUXjgJLCToFL0uTQg==
 
-"@middy/error-logger@*":
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/@middy/error-logger/-/error-logger-4.2.6.tgz#2fe62bccb2fbc4abeec801d6f4c85feb6f0c1260"
-  integrity sha512-rF324sK9UIgV6lWtsGikoKsIH4cb6POpxUFmcVLH9HmyiCsZ53yEFpo6+v19yHADgGJOP6wK1YIzgeZ/dgIZUg==
-
 "@middy/event-normalizer@*":
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/@middy/event-normalizer/-/event-normalizer-4.2.6.tgz#529e05caffc8a71b56b88211add2070f4fd0abc7"
   integrity sha512-dyvCvLpR8AoBZ52KQ5jozlTeJpbMNiU1vANJsODcFoziZs69QlhiJc9epV4gXNnVPl8eC315RRQ/FrULAvNEEA==
-  dependencies:
-    "@middy/util" "4.2.6"
-
-"@middy/input-output-logger@*":
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/@middy/input-output-logger/-/input-output-logger-4.2.6.tgz#0d29d62adaa3c26ee14b693667e7469b8a2b8806"
-  integrity sha512-e8lw/vHk3P7GETd0TNE9eBHC8gmPfdsAuAfhnjO+krFpAxSOKpmKZ3dQoBqF0y3Uq14oDGm8GzwGx9ATFOs2/A==
   dependencies:
     "@middy/util" "4.2.6"
 

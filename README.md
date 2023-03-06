@@ -1,41 +1,30 @@
-# integ-runner proto with a failing test
+# integ-runner proto with a failing tests
 
-This is an example of a "failing" integration test.
+This is an example of a "failing" integration tests.
 
-The test in `test/integ.failure.ts` fails with the following error:
+The test in `test/integ.not-valid-json.ts` fails with the following error:
 
 ```
  ❌  IntegTest/DefaultTest/DeployAssert failed: Error: The stack named IntegTestDefaultTestDeployAssertE3E7D2A4 failed to deploy: CREATE_FAILED (The following resource(s) failed to create: [AwsApiCallDynamoDBquery]. ): Response is not valid JSON
-    at FullCloudFormationDeployment.monitorDeployment (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/api/deploy-stack.ts:512:13)
-    at processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at deployStack2 (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/cdk-toolkit.ts:265:24)
-    at /Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/deploy.ts:39:11
-    at run (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/p-queue/dist/index.js:163:29)
+    at FullCloudFormationDeployment.monitorDeployment (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/index.js:344:10235)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async deployStack2 (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/index.js:347:144797)
+    at async /Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/index.js:347:130251
+    at async run (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/index.js:347:128257)
 ```
 
-```
- ❌ Deployment failed: Error: Stack Deployments Failed: Error: The stack named IntegTestDefaultTestDeployAssertE3E7D2A4 failed to deploy: CREATE_FAILED (The following resource(s) failed to create: [AwsApiCallDynamoDBquery]. ): Response is not valid JSON
-    at deployStacks (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/deploy.ts:61:11)
-    at CdkToolkit.deploy (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/cdk-toolkit.ts:339:7)
-    at exec4 (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/cli.ts:403:12)
-```
+The test in `test/integ.object-is-too-long.ts` fails with the following error:
 
 ```
-  FAILED     integ.failure-IntegTest/DefaultTest (undefined/eu-west-1) 318.735s
-      Integration test failed: TypeError [ERR_STREAM_NULL_VALUES]: May not write null values to stream
-
-Test Results:
-
-Tests:    1 failed, 1 total
-   --- Integration test metrics ---
-Profile undefined + Region eu-west-1 total time: 318.736
-  /Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/test/integ.failure.ts: 318.736
-Error: Some integration tests failed!
-    at main (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/@aws-cdk/integ-runner/lib/index.js:10301:15)
-👾 Task "integ:update" failed when executing "integ-runner --language typescript --update-on-failed -vvvv --clean" (cwd: /Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto)
+ ❌  IntegTest/DefaultTest/DeployAssert failed: Error: The stack named IntegTestDefaultTestDeployAssertE3E7D2A4 failed to deploy: CREATE_FAILED (The following resource(s) failed to create: [AwsApiCallDynamoDBquery]. ): Response object is too long.
+    at FullCloudFormationDeployment.monitorDeployment (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/index.js:344:10235)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async deployStack2 (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/index.js:347:144797)
+    at async /Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/index.js:347:130251
+    at async run (/Users/nikovirtala/src/github.com/nikovirtala/integ-runner-proto/node_modules/aws-cdk/lib/index.js:347:128257)
 ```
 
-Despite the response to CloudFormation is `SUCCESS`:
+Despite the response to CloudFormation in both cases is `SUCCESS`:
 
 ```
 2023-03-01T11:07:01.606Z	1be4ffb8-7d44-4ec5-a25f-a57ac8a768cb	INFO	Responding to CloudFormation {
